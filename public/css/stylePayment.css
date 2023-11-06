@@ -1,0 +1,4 @@
+.custom-control-label::before {
+    left: auto;
+    right: 1rem;
+}

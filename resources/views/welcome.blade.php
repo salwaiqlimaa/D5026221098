@@ -54,9 +54,28 @@
                             </div>
 
                             <div class="ml-12">
+                            <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+                                   SISTEM INFORMASI ITS
+                                   <br>
+                                   <?php echo date("D d M Y") ?>
+                                   <ul>
+                                    <li><a href="/berita">berita</a></li>
+                                    <li><a href="/hello">hello</a></li>
+                                    <li><a href="/index">index</a></li>
+                                    <li><a href="/js1">js1</a></li>
+                                    <li><a href="/js2">js2</a></li>
+                                    <li><a href="/latihan1-fix">latihan1</a></li>
+                                    <li><a href="/latihan - Copy">latihan - Copy</a></li>
+                                    <li><a href="/latihan1-fix">latihan1-fix</a></li>
+                                    <li><a href="/link">link</a></li>
+                                    <li><a href="/oxfordsocietyshop">oxfordsocietyshop</a></li>
+                                    <li><a href="/responsive">responsive</a></li>
+                                    <li><a href="/style">style</a></li>
+                                    <li><a href="/validasi1">validasi1</a></li>
+                                </ul>
                                 </div>
+                            </div>
                             </div>
                         </div>
 

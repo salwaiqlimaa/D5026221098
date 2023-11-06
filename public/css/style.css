@@ -1,0 +1,110 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f26c;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-link.active {
+    font-weight: 700;
+}
+
+/* About Section */
+#about {
+    margin-top: 20px;
+    padding: 25px 0;
+}
+
+#about img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Product Section */
+#products {
+    padding: 50px 0;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.custom-btn {
+    background-color: #165F60;
+    color: #fff;
+    border: none;
+}
+
+/* Connect Section */
+@media (max-width: 767px) {
+    .connect-img {
+        display: none;
+    }
+}
+
+.connect-img {
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-img {
+    width: 100%;
+    max-height: 500px;
+    margin-right: 0;
+}
+
+#footer {
+    background-color: #165F60;
+    padding: 50px 0;
+    margin-top: 10px;
+    color: white;
+}
+
+/* sosmed and contact Section */
+.sosmed a{
+    color: white;
+    margin-bottom: 7px;
+    text-decoration: none;
+}
+
+/* Support */
+.support a {
+    margin-bottom: 4px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Extras */
+.extras a {
+    margin-bottom: 4px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Subscribe btn */
+.subscribe a{
+    margin-bottom: 4px;
+    color: white;
+}
