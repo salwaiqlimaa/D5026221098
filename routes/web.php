@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,3 +57,11 @@ Route::get('/validasi1', function () {
 });
 Route::get('perkalian','App\Http\Controllers\DosenController@index');
 Route::get('show','App\Http\Controllers\DosenController@showBlog');
+
+//route CRUD
+Route::get('/pegawai','App\Http\Controllers\DosenController@index');
+Route::get('/pegawai/tambah','App\Http\Controllers\DosenController@tambah');
+Route::post('/pegawai/store','App\Http\Controllers\DosenController@store');
+Route::get('/pegawai/edit/{id}','App\Http\Controllers\DosenController@edit');
+Route::post('/pegawai/update','App\Http\Controllers\DosenController@update');
+Route::get('/pegawai/hapus/{id}','App\Http\Controllers\DosenController@hapus');
