@@ -55,9 +55,13 @@ Route::get('/style', function () {
 Route::get('/validasi1', function () {
     return view('validasi1');
 });
+Route::get('/blog', function () {
+    return view('blog');
+});
 Route::get('perkalian','App\Http\Controllers\DosenController@index');
 Route::get('show','App\Http\Controllers\DosenController@showBlog');
 
+<<<<<<< HEAD
 //route CRUD
 Route::get('/pegawai','App\Http\Controllers\DosenController@index');
 Route::get('/pegawai/tambah','App\Http\Controllers\DosenController@tambah');
@@ -65,3 +69,14 @@ Route::post('/pegawai/store','App\Http\Controllers\DosenController@store');
 Route::get('/pegawai/edit/{id}','App\Http\Controllers\DosenController@edit');
 Route::post('/pegawai/update','App\Http\Controllers\DosenController@update');
 Route::get('/pegawai/hapus/{id}','App\Http\Controllers\DosenController@hapus');
+=======
+Route::get('/pegawai/{nama}', 'App\Http\Controllers\DosenController@shownama');
+
+Route::get('/formulir', 'App\Http\Controllers\DosenController@formulir');
+Route::post('/formulir/proses', 'App\Http\Controllers\DosenController@proses');//kalau datanya secure pake post
+
+Route::get('/blog', 'App\Http\Controllers\BlogController@home');
+Route::get('/blog/tentang', 'App\Http\Controllers\BlogController@tentang');
+Route::get('/blog/kontak', 'App\Http\Controllers\BlogController@kontak');
+
+>>>>>>> bbd31d1bd88ced66751208fde884c01c33a4c577
