@@ -62,9 +62,13 @@ Route::get('perkalian','App\Http\Controllers\DosenController@index');
 Route::get('show','App\Http\Controllers\DosenController@showBlog');
 
 //route CRUDphp
-Route::get('/pegawai','App\Http\Controllers\DosenController@index');
-Route::get('/pegawai/tambah','App\Http\Controllers\DosenController@tambah');
-Route::post('/pegawai/store','App\Http\Controllers\DosenController@store');
-Route::get('/pegawai/edit/{id}','App\Http\Controllers\DosenController@edit');
-Route::post('/pegawai/update','App\Http\Controllers\DosenController@update');
-Route::get('/pegawai/hapus/{id}','App\Http\Controllers\DosenController@hapus');
+Route::get('/pegawai','App\Http\Controllers\PegawaiController@index');
+Route::get('/pegawai/tambah','App\Http\Controllers\PegawaiController@tambah');
+Route::post('/pegawai/store','App\Http\Controllers\PegawaiController@store');
+Route::get('/pegawai/edit/{nama}','App\Http\Controllers\PegawaiController@edit');
+Route::post('/pegawai/update','App\Http\Controllers\PegawaiController@update');
+Route::get('/pegawai/hapus/{nama}','App\Http\Controllers\PegawaiController@hapus');
+Route::get('/pegawai/view','App\Http\Controllers\PegawaiController@view');
+
+	
+Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
