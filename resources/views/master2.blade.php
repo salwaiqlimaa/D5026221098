@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <title>@yield('title')
-    </title> <!-- Latest compiled and minified CSS -->
+    <title>@yield('title')</title> 
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -44,9 +44,11 @@
                 </li>
             </ul>
         </nav>
+        <div class="container">
         <hr />
         <br />
         <br />
+
         <!-- bagian judul halaman blog -->
         @yield('judul_halaman')
 
@@ -56,9 +58,10 @@
         <br />
         <hr />
         <footer>
-            <p>&copy; <a href="https://www.malasngoding.com">www.malasngoding.com</a>. 2018 - 2019</p>
+            <p>&copy; <a href="https://www.malasngoding.com">web malas ngoding ngik</a>. 2023</p>
         </footer>
     </div>
+
 
 </body>
 

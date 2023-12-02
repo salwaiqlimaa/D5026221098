@@ -91,4 +91,13 @@ class PegawaiController extends Controller
 		return view('index',['pegawai' => $pegawai]);
  
 	}
+	public function view($id)
+	{
+		//ambil data table pegawai sesuai id
+		$pegawai = DB::table('pegawai')
+		->where('id_pegawai', $id)
+		->get();
+
+		return view ('view',['pegawai' => $pegawai]);
+	}
 }
