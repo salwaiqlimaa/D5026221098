@@ -36,7 +36,14 @@
         <!-- <td>{{ $p->id_pegawai }}</td> -->
         <td>{{ $p->nama_pegawai }}</td>
         <td>{{ $p->jabatan_pegawai }}</td>
-        <td>{{ $p->umur_pegawai }}</td>
+        <td class="
+        @if($p->umur_pegawai <= 20)
+        bg-success text-white
+        @elseif($p->umur_pegawai >= 20 && $p->umur_pegawai <= 30)
+        bg-warning text-red
+        @else
+        bg-primary text-white
+        @endif">{{ $p->umur_pegawai }}</td>
         <td>{{ $p->alamat_pegawai }}</td>
         <td>
             <a href="/pegawai/view/{{ $p->id_pegawai }}" class="btn btn-success">View</a>

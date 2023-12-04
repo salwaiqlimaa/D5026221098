@@ -5,23 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class PegawaiController extends Controller
+class PensilController extends Controller
 {
 	public function index()
 	{
     	// mengambil data dari table pegawai
 		// $pegawai = DB::table('pegawai')->get();
-        $pegawai = DB::table('pegawai')->paginate(10);
+        $pegawai = DB::table('pensil')->paginate(10);
  
     	// mengirim data pegawai ke view index
-		return view('index',['pegawai' => $pegawai]);
+		return view('index',['pensil' => $pensil]);
  
 	}
  
 	// method untuk menampilkan view form tambah pegawai
 	public function tambah()
 	{
-
+ 
 		// memanggil view tambah
 		return view('tambah');
  
@@ -31,24 +31,24 @@ class PegawaiController extends Controller
 	public function store(Request $request)
 	{
 		// insert data ke table pegawai
-		DB::table('pegawai')->insert([
-			'nama_pegawai' => $request->nama,
-			'jabatan_pegawai' => $request->jabatan,
-			'umur_pegawai' => $request->umur,
-			'alamat_pegawai' => $request->alamat
+		DB::table('pensil')->insert([
+			'kodepensil' => $request->kode,
+			'merkpensil' => $request->merk,
+			'stockpensil' => $request->stock,
+			'tersedia' => $request->tersedia
 		]);
 		// alihkan halaman ke halaman pegawai
-		return redirect('/pegawai');
+		return redirect('/pensil');
  
 	}
  
 	// method untuk edit data pegawai
-	public function edit($id)
+	public function edit($kode)
 	{
 		// mengambil data pegawai berdasarkan id yang dipilih
-		$pegawai = DB::table('pegawai')->where('id_pegawai',$id)->get();
+		$pegawai = DB::table('pensil')->where('kodepensil',$kode)->get();
 		// passing data pegawai yang didapat ke view edit.blade.php
-		return view('edit',['pegawai' => $pegawai]);
+		return view('edit',['pensil' => $pensil]);
         //kalau return view harus ngelakuin 2 perintah, redirect lebih ringkas
  
 	}
@@ -57,25 +57,25 @@ class PegawaiController extends Controller
 	public function update(Request $request)
 	{
 		// update data pegawai
-		DB::table('pegawai')->where('id_pegawai',$request->id)->update([
-			'nama_pegawai' => $request->nama,
-			'jabatan_pegawai' => $request->jabatan,
-			'umur_pegawai' => $request->umur,
-			'alamat_pegawai' => $request->alamat
+		DB::table('pensil')->where('kodepensil',$request->kode)->update([
+			'kodepensil' => $request->kode,
+			'merkpensil' => $request->merk,
+			'stockpensil' => $request->stock,
+			'tersedia' => $request->tersedia
 		]);
 		// alihkan halaman ke halaman pegawai
-		return redirect('/pegawai');
+		return redirect('/pensil');
         //alasan knp ngga return view: redirect lebih ringkas: ngelempar ke suatu url route
 	}
  
 	// method untuk hapus data pegawai
-	public function hapus($id)
+	public function hapus($kode)
 	{
 		// menghapus data pegawai berdasarkan id yang dipilih
-		DB::table('pegawai')->where('id_pegawai',$id)->delete();
+		DB::table('pensil')->where('kodepensil',$kode)->delete();
 		
 		// alihkan halaman ke halaman pegawai
-		return redirect('/pegawai');
+		return redirect('/pensil');
 	}
     public function cari(Request $request)
 	{
@@ -83,21 +83,21 @@ class PegawaiController extends Controller
 		$cari = $request->cari;
  
     		// mengambil data dari table pegawai sesuai pencarian data
-		$pegawai = DB::table('pegawai')
-		->where('nama_pegawai','like',"%".$cari."%")
+		$pensil = DB::table('pensil')
+		->where('merkpensil','like',"%".$cari."%")
 		->paginate();
  
     		// mengirim data pegawai ke view index
-		return view('index',['pegawai' => $pegawai]);
+		return view('index',['pensil' => $pensil]);
  
 	}
-	public function view($id)
+	public function view($kode)
 	{
 		//ambil data table pegawai sesuai id
-		$pegawai = DB::table('pegawai')
-		->where('id_pegawai', $id)
+		$pensil = DB::table('pensil')
+		->where('kodepensil', $kode)
 		->get();
 
-		return view ('view',['pegawai' => $pegawai]);
+		return view ('view',['pensil' => $pensil]);
 	}
 }

@@ -1,15 +1,15 @@
 @extends('master2')
 
 @section('konten')
-    <h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
-    <h3>Data Pegawai</h3>
+    
+    <h3>Data Pensil</h3>
 
-    <a href="/pegawai"> Kembali</a>
+    <a href="/pensil"> Kembali</a>
 
     <br />
     <br />
 
-    <form action="/pegawai/store" method="post" form-horizontal>
+    <form action="/pensil/store" method="post" form-horizontal>
         {{ csrf_field() }}
 		<div class = "form-group row">
             <label for = "firstname" class = "col-sm-2 control-label">Nama</label>
