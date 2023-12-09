@@ -80,3 +80,8 @@ Route::post('/pensil/update','App\Http\Controllers\PensilController@update');
 Route::get('/pensil/hapus/{kodepensil}','App\Http\Controllers\PensilController@hapus');
 Route::get('/pensil/view/{kodepensil}','App\Http\Controllers\PensilController@view');
 Route::get('/pensil/cari','App\Http\Controllers\PensilController@cari');
+
+//route CRUDphp nilaikuliah
+Route::get('/nilaikuliah', 'App\Http\Controllers\nilaikuliahController@index');
+Route::get('/nilaikuliah/tambahNilaikuliah', 'App\Http\Controllers\nilaikuliahController@tambah');
+Route::post('/nilaikuliah/store', 'App\Http\Controllers\nilaikuliahController@store');
