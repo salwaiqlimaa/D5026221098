@@ -73,10 +73,10 @@ Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 
 //route CRUDphp pensil
 Route::get('/pensil','App\Http\Controllers\PensilController@index');
-Route::get('/pensil/tambah','App\Http\Controllers\PensilController@tambah');
+Route::get('/pensil/tambahpensil','App\Http\Controllers\PensilController@tambah');
 Route::post('/pensil/store','App\Http\Controllers\PensilController@store');
-Route::get('/pensil/edit/{id}','App\Http\Controllers\PensilController@edit');
+Route::get('/pensil/edit/{kodepensil}','App\Http\Controllers\PensilController@edit');
 Route::post('/pensil/update','App\Http\Controllers\PensilController@update');
-Route::get('/pensil/hapus/{id}','App\Http\Controllers\PensilController@hapus');
-Route::get('/pensil/view/{id}','App\Http\Controllers\PensilController@view');
+Route::get('/pensil/hapus/{kodepensil}','App\Http\Controllers\PensilController@hapus');
+Route::get('/pensil/view/{kodepensil}','App\Http\Controllers\PensilController@view');
 Route::get('/pensil/cari','App\Http\Controllers\PensilController@cari');

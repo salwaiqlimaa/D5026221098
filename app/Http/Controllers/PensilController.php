@@ -9,12 +9,12 @@ class PensilController extends Controller
 {
 	public function index()
 	{
-    	// mengambil data dari table pegawai
-		// $pegawai = DB::table('pegawai')->get();
-        $pegawai = DB::table('pensil')->paginate(10);
+    	// mengambil data dari table pensil
+		// $pensil = DB::table('pensil')->get();
+        $pensil = DB::table('pensil')->paginate(10);
  
     	// mengirim data pegawai ke view index
-		return view('index',['pensil' => $pensil]);
+		return view('indexpensil',['pensil' => $pensil]);
  
 	}
  
@@ -23,7 +23,7 @@ class PensilController extends Controller
 	{
  
 		// memanggil view tambah
-		return view('tambah');
+		return view('tambahpensil');
  
 	}
  
@@ -46,9 +46,9 @@ class PensilController extends Controller
 	public function edit($kode)
 	{
 		// mengambil data pegawai berdasarkan id yang dipilih
-		$pegawai = DB::table('pensil')->where('kodepensil',$kode)->get();
+		$pensil = DB::table('pensil')->where('kodepensil',$kode)->get();
 		// passing data pegawai yang didapat ke view edit.blade.php
-		return view('edit',['pensil' => $pensil]);
+		return view('editpensil',['pensil' => $pensil]);
         //kalau return view harus ngelakuin 2 perintah, redirect lebih ringkas
  
 	}
@@ -88,7 +88,7 @@ class PensilController extends Controller
 		->paginate();
  
     		// mengirim data pegawai ke view index
-		return view('index',['pensil' => $pensil]);
+		return view('indexpensil',['pensil' => $pensil]);
  
 	}
 	public function view($kode)
@@ -98,6 +98,6 @@ class PensilController extends Controller
 		->where('kodepensil', $kode)
 		->get();
 
-		return view ('view',['pensil' => $pensil]);
+		return view ('viewpensil',['pensil' => $pensil]);
 	}
 }
