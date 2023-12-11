@@ -29,15 +29,23 @@ class karyawanController extends Controller
     // method untuk insert data ke table pegawai
     public function store(Request $request)
     {
-    	// insert data ke table pegawai
-    	DB::table('karyawan')->insert([
-    		'kodepegawai' => $request->kodekaryawan,
-    		'namalengkap' => $request->namakaryawan,
-    		'divisi' => $request->divisikaryawan,
-    		'departemen' => $request->departemenkaryawan
-    	]);
-    	// alihkan halaman ke halaman pegawai
-    	return redirect('/karyawan');
+        $existKaryawan = DB::table('karyawan')
+            ->where('kodepegawai', $request->kodekaryawan)
+            ->first();
+
+        if ($existKaryawan) {
+            return redirect('/karyawan')->with('error', 'Kode Pegawai terdapat yang sama!');
+        }
+        // insert data ke table pegawai
+        DB::table('karyawan')->insert([
+            'kodepegawai' => $request->kodekaryawan,
+            'namalengkap' => $request->namakaryawan,
+            'divisi' => $request->divisikaryawan,
+            'departemen' => $request->departemenkaryawan
+        ]);
+        // alihkan halaman ke halaman pegawai
+        return redirect('/karyawan')->with('success', 'Data berhasil disimpan!');
+        ;
 
     }
 
