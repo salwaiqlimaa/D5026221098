@@ -85,3 +85,31 @@ Route::get('/pensil/cari','App\Http\Controllers\PensilController@cari');
 Route::get('/nilaikuliah', 'App\Http\Controllers\nilaikuliahController@index');
 Route::get('/nilaikuliah/tambahNilaikuliah', 'App\Http\Controllers\nilaikuliahController@tambah');
 Route::post('/nilaikuliah/store', 'App\Http\Controllers\nilaikuliahController@store');
+
+//route CRUDphp karyawanX2
+Route::get('/karyawanx2', 'App\Http\Controllers\karyawanx2Controller@index');
+Route::get('/karyawanx2/tambahkaryawanx2', 'App\Http\Controllers\karyawanx2Controller@tambah');
+Route::post('/karyawanx2/store', 'App\Http\Controllers\karyawanx2Controller@store');
+Route::post('/karyawanx2/update','App\Http\Controllers\karyawanx2Controller@update');
+Route::get('/karyawanx2/hapuskaryawanx2/{kodekaryawan}','App\Http\Controllers\karyawanx2Controller@hapus');
+Route::get('/karyawanx2/cari','App\Http\Controllers\karyawanx2Controller@cari');
+Route::get('/karyawanx2/editkaryawanx2/{kodekaryawan}','App\Http\Controllers\karyawanx2Controller@edit');
+Route::get('/karyawanx2/viewkaryawanx2/{kodekaryawan}','App\Http\Controllers\karyawanx2Controller@view');
+
+//route CRUDphp countersoalx1
+Route::get('/soalx1', 'App\Http\Controllers\soalx1Controller@index');
+Route::post('/soalx1/store', 'App\Http\Controllers\soalx1Controller@store');
+Route::post('/soalx1/update','App\Http\Controllers\soalx1Controller@update');
+
+Route::get('/shoppingchart', 'App\Http\Controllers\shoppingchartController@index');
+Route::get('/shoppingchart/tambahshoppingchart', 'App\Http\Controllers\shoppingchartController@tambah');
+Route::post('/shoppingchart/store', 'App\Http\Controllers\shoppingchartController@store');
+Route::post('/shoppingchart/update','App\Http\Controllers\shoppingchartController@update');
+Route::get('/shoppingchart/hapusshoppingchart/{id}','App\Http\Controllers\shoppingchartController@hapus');
+
+//route CRUDphp karyawan
+Route::get('/karyawan', 'App\Http\Controllers\karyawanController@index');
+Route::get('/karyawan/tambahkaryawan', 'App\Http\Controllers\karyawanController@tambah');
+Route::post('/karyawan/store', 'App\Http\Controllers\karyawanController@store');
+Route::post('/karyawan/update','App\Http\Controllers\karyawanController@update');
+Route::get('/karyawan/hapuskaryawan/{kodepegawai}','App\Http\Controllers\karyawanController@hapus');
